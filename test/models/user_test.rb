@@ -29,7 +29,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-
   test "email validation should accept valid addresses" do
     valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
                          first.last@foo.jp alice+bob@baz.cn]
@@ -52,5 +51,13 @@ class UserTest < ActiveSupport::TestCase
     duplicate_user = @user.dup
     @user.save
     assert_not duplicate_user.valid?
+  end
+
+  test "associated microposts should be destroyed" do
+    @user.save
+    @user.microposts.create!(address: "207 Guerrero St")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
   end
 end
