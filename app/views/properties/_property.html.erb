@@ -1,0 +1,7 @@
+<li id="=property-<%= property.id %>">
+  <span class="user"><%= link_to property.user.name, property.user %></span>
+  <span class="content"><%= property.address %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(property.created_at) %> ago.
+  </span>
+</li>

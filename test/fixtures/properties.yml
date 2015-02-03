@@ -1,0 +1,7 @@
+one:
+  address: "2909 Woodside Rd, Woodside CA"
+  user: :michael
+
+two:
+  address: "622 East 24th St, Oakland CA"
+  user: :archer
