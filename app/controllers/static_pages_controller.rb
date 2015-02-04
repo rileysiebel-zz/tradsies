@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-      @property  = current_user.properties
+      # @property  = current_user.properties
   end
 
   def help
