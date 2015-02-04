@@ -53,10 +53,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end
 
-  test "associated microposts should be destroyed" do
+  test "associated properties should be destroyed" do
     @user.save
-    @user.microposts.create!(address: "207 Guerrero St")
-    assert_difference 'Micropost.count', -1 do
+    @user.properties.create!(address: "207 Guerrero St")
+    assert_difference 'Property.count', -1 do
       @user.destroy
     end
   end
